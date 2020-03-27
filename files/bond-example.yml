@@ -1,0 +1,21 @@
+network:
+    version: 2
+    ethernets:
+        eth0:
+          mtu: 9000
+        eth1:
+          mtu: 9000
+    bonds:
+        bond0:
+            interfaces:
+              - eth0
+              - eth1
+            dhcp4: true
+            mtu: 9000
+            parameters:
+                down-delay: 0
+                lacp-rate: fast
+                mii-monitor-interval: 100
+                mode: 802.3ad
+                transmit-hash-policy: layer3+4
+                up-delay: 0
